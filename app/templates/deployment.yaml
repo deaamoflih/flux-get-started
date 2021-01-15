@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: test19-app
+  name: my-nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: test19-app 
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: test19-app
+    spec:
+      containers:
+      - image: deaamoflih/katze:1.0
+        name: test19-app
+        resources: {}
+status: {}
