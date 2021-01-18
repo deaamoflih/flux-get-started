@@ -21,10 +21,10 @@ spec:
       - image: deaamoflih/katze:1.0
         name: test19-app
         resources: 
-        limits:
+         limits:
           memory: 70Mi
           cpu:  75m
-        requests:
+         requests:
           memory: 64Mi
           cpu: 50m
 
