@@ -3,4 +3,4 @@ kind: Namespace
 metadata:
   labels:
     name: demo
-  name: changed-application-namespace
+  name: 2nd-changed-application-namespace
