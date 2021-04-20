@@ -1,0 +1,48 @@
+---
+version: 2
+#server-name: DevStack Bamboo
+plan:
+  project-key: TEST
+  key: FIR
+  name: first-plan
+stages:
+  - Default Stage:
+      manual: false
+      final: false
+      jobs:
+        - Default Job
+Default Job:
+  key: JOB1
+  tasks:
+#    - checkout:
+#        repository: hpf-shared-mongo-tls
+#        force-clean-build: 'true'
+    - script:
+       interpreter: SHELL
+       scripts:
+         - echo "tesk1"
+    - script: |
+        echo "task2"
+    - script configuration: echo "task3" > deployment.yaml    
+ #   - Docker Push:
+ #       Command: Push a Docker image to a Docker registry
+ #       Registry: hpf-docker.docker.devstack.vwgroup.com/mongo-tls:${bamboo.inject.VERSION}-${bamboo.buildNumber}
+  artifacts:
+    - name: Openshift deployment descriptor
+      location: ./
+      pattern: deployment.yaml
+      shared: true
+      required: true  
+        
+  requirements:
+ #   - system.builder.mvn3.Maven 3
+    - system.docker.executable
+branches:
+  create: for-new-branch
+  delete:
+    after-deleted-days: 7
+    after-inactive-days: never
+  link-to-jira: true
+labels: []
+other:
+  concurrent-build-plugin: system-default

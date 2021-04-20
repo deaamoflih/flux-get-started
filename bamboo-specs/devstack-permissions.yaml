@@ -1,0 +1,13 @@
+---
+version: 2
+plan:
+  key: TEST-FIR
+plan-permissions:
+  - users: []
+    groups: []
+    permissions:
+      - view
+      - edit
+      - build
+      - clone
+      - admin
