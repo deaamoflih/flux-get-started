@@ -20,7 +20,7 @@ Default Job:
          - echo "tesk1"
     - script:  echo "task2"  
     - script: echo "task3" > deployment.yaml
-    - Docker Image:
+    - Docker:
        source-plan:  TEST-FIT
        Command: Build a Docker image
        Repository: deaamoflih/test19:3.33
