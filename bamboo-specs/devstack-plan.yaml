@@ -1,6 +1,6 @@
 ---
 version: 2
-#server-name: DevStack Bamboo
+#server-name: DevStack Bamboo#
 plan:
   project-key: TEST
   key: FIT
