@@ -20,11 +20,11 @@ Default Job:
          - echo "tesk1"
     - script:  echo "task2"  
     - script: echo "task3" > deployment.yaml
-    - Docker Build:
+    - Docker:
       Command: Build a Docker image
       Repository: deaamoflih/test19
-    - Docker Push: 
-      Command: Build a Docker image
+    - Docker: 
+      Command: Push a Docker image
       Repository: deaamoflih/test19
       
   artifacts:
