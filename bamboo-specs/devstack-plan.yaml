@@ -40,7 +40,6 @@ Default Job:
       required: true        
   requirements:
     - system.docker.executable
-    - DOCKER
 branches:
   create: for-new-branch
   delete:
