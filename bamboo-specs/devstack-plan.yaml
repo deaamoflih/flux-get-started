@@ -21,11 +21,11 @@ Default Job:
     - script:  echo "task2"  
     - script: echo "task3" > deployment.yaml
     - Docker:
-      Command: Build a Docker image
-      Repository: deaamoflih/test19
+       Command: Build a Docker image
+       Repository: deaamoflih/test19
     - Docker: 
-      Command: Push a Docker image
-      Repository: deaamoflih/test19
+       Command: Push a Docker image
+       Repository: deaamoflih/test19
       
   artifacts:
     - name: Openshift deployment descriptor
