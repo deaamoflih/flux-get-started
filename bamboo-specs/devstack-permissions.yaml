@@ -1,7 +1,7 @@
 ---
 version: 2
 plan:
-  key: TEST-FIR
+  key: TEST-FIT
 plan-permissions:
   - users: []
     groups: []
