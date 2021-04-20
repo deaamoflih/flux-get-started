@@ -3,8 +3,8 @@ version: 2
 #server-name: DevStack Bamboo
 plan:
   project-key: TEST
-  key: FIR
-  name: first-plan
+  key: FIT
+  name: first
 stages:
   - Default Stage:
       manual: false
