@@ -17,21 +17,14 @@ Default Job:
     - script:
        interpreter: SHELL
        scripts:
-         - echo "tesk1"
-    - script:  echo "task2"  
+         - docker login -u deaamoflih -p Aa9wix2na
     - script: echo "task3" > deployment.yaml
     - script: 
        scripts:
-        - docker build .
-#    - Docker:
-#       source-plan:  TEST-FIT
-#       Command: Build a Docker image
-#       Repository: deaamoflih/test19:3.33
- 
- #   - Docker: 
- #      Command: Push a Docker image
- #      Repository: deaamoflih/test19
-      
+        - docker build -t deaamoflih/sample:2.0 .
+    - script: 
+       scripts:
+        - docker push deaamoflih/sample:2.0     
   artifacts:
     - name: Openshift deployment descriptor
       location: ./
