@@ -15,9 +15,9 @@ Default Job:
   key: JOB1
   tasks:
     - script:
-      scripts:
-       - echo "test"
-       - echo PASS=${bamboo.pass} > VERSION.properties
+       scripts:
+        - echo "test"
+        - echo PASS=${bamboo.pass} > VERSION.properties
     - inject-variables:
        file: VERSION.properties
        scope: RESULT
