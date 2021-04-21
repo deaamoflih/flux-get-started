@@ -15,9 +15,17 @@ Default Job:
   key: JOB1
   tasks:
     - script:
+      scripts:
+       - echo "test"
+       - echo PASS=${bamboo.pass} > VERSION.properties
+    - inject-variables:
+       file: VERSION.properties
+       scope: RESULT
+       namespace: inject
+    - script:
        interpreter: SHELL
        scripts:
-         - docker login -u deaamoflih -p Aa9wix2na
+         - docker login -u deaamoflih -p ${bamboo.inject.PASS}
     - script: echo "task3" > deployment.yaml
     - script: 
        scripts:
