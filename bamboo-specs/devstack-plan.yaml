@@ -19,7 +19,7 @@ Default Job:
         - echo "test"
         - echo PASS=${bamboo.pass} > VERSION.properties
     - inject-variables:
-       Task description: task1
+       description: task1
        file: VERSION.properties
        scope: RESULT
        namespace: inject
