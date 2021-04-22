@@ -6,15 +6,13 @@ plan:
   key: FIT
   name: first
 stages:
-  - Build the rocket stage:
-   - Build
-#  - Default Stage:
+  - Default Stage:
 #      manual: false
 #      final: false
 #      jobs:
-#        - Default Job
+        - building
 #Default Job:
-Build:
+building:
 #  key: JOB1
   tasks:
     - script:
