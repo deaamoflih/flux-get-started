@@ -1,0 +1,18 @@
+---
+version: 2
+deployment:
+  name: test-deploy
+deployment-permissions:
+  - users: []
+    groups: []
+    permissions:
+      - view
+      - edit
+environment-permissions:
+  - DEV:
+      - users: []
+        groups: []
+        permissions:
+          - view
+          - edit
+          - deploy

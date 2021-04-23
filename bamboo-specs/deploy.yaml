@@ -1,0 +1,34 @@
+---
+version: 2
+deployment:
+  name: test-deploy
+  source-plan: TEST-FIT
+release-naming:
+  next-version-name: release-1
+  applies-to-branches: false
+  auto-increment: true
+  auto-increment-variables: []
+environments:
+  - DEV
+DEV:
+  triggers: []
+  tasks:
+    - clean
+    - artifact-download:
+        artifacts:
+          - destination: ./
+            name: deployment-dev.yaml
+    - script:
+        interpreter: SHELL
+        scripts:
+          - |-
+            # Download 
+            echo "first"
+            # (to not mess up ).
+            echo "first-second"
+  final-tasks: []
+  variables:
+    deployment_file: deployment.yaml
+    project_name: test
+  requirements: []
+  notifications: []
