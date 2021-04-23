@@ -20,7 +20,7 @@ building:
         - echo "test"
         - echo PASS=${bamboo.pass} > VERSION.properties
     - inject-variables:
-#       task-description: task1
+##       task-description: task1
        file: VERSION.properties
        scope: RESULT
        namespace: inject
