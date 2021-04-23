@@ -17,7 +17,7 @@ DEV:
     - artifact-download:
         artifacts:
           - destination: ./
-            name: All artifacts
+  #          name: all artifacts
     - script:
         interpreter: SHELL
         scripts:
