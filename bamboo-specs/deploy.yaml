@@ -17,7 +17,7 @@ DEV:
     - artifact-download:
         artifacts:
           - destination: ./
-            name: deployment-dev.yaml
+            name: Openshift deployment descriptor
     - script:
         interpreter: SHELL
         scripts:
