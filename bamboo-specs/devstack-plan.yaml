@@ -30,10 +30,10 @@ building:
          - docker login -u deaamoflih -p ${bamboo.inject.PASS}
     - script: echo "task3" > deployment.yaml
     - maven:
-       executable: Maven
+       executable: Maven []
        jdk: JDK 1.8
        goal: clean package -DskipTests=true
-       environments: SS_SERNAME=ss
+       environment: SS_SERNAME=ss
     - script: 
        scripts:
         - docker build -t deaamoflih/sample:2.0 .
