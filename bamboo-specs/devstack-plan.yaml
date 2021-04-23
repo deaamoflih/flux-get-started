@@ -33,7 +33,7 @@ building:
        executable: Maven []
        jdk: JDK 1.8
        goal: clean package -DskipTests=true
-       environment: SS_SERNAME=ss
+       environment: SS_SERNAME=ss ADA_ASASD=sdf
     - script: 
        scripts:
         - docker build -t deaamoflih/sample:2.0 .
