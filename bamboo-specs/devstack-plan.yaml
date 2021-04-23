@@ -31,7 +31,7 @@ building:
     - script: echo "task3" > deployment.yaml
     - maven:
        executable: Maven 3.6.3
-       jdk: JDK 11.0.2
+       jdk: JDK 1.8
        goal: clean package -DskipTests=true
        environment: SS_SERNAME=ss
     - script: 
