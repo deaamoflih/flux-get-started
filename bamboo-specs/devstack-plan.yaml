@@ -22,7 +22,7 @@ building:
     - inject-variables:
 ##       task-description: task1
        file: VERSION.properties
-       scope: RESULT
+       scope: LOCAL
        namespace: inject
     - script:
        interpreter: SHELL
