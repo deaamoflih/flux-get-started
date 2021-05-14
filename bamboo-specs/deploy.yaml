@@ -19,7 +19,7 @@ DEV:
           - destination: ./
     - inject-variables:
        file: VERSION.properties
-       scope: RESULT
+       scope: LOCAL
        namespace: inje
     - script:
         interpreter: SHELL
