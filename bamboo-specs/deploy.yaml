@@ -34,7 +34,7 @@ DEV:
           - |-
             echo ${bamboo.buildNumber}
             echo "first"
-            echo ${bamboo.inject.pass}
+            echo ${bamboo.inject.VERSION}
   final-tasks: []
   variables:
     deployment_file: deployment.yaml
