@@ -29,6 +29,12 @@ DEV:
             echo "first"
             # (to not mess up ).
             echo "first-second"
+    - script:
+        scripts:
+          - |-
+            echo ${bamboo.buildNumber}
+            echo "first"
+            echo ${bamboo.inject.VERSION}
   final-tasks: []
   variables:
     deployment_file: deployment.yaml
