@@ -29,6 +29,7 @@ building:
 #       scripts:
 #         - docker login -u deaamoflih -p ${bamboo.inject.PASS}
     - script: echo "task3" > deployment.yaml
+    - script: echo ${bamboo.inject.VERSION}
  #   - maven:
  #      executable: "2"
  #      jdk: JDK 1.8
