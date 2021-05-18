@@ -20,7 +20,7 @@ DEV:
     - inject-variables:
        file: VERSION.properties
        scope: LOCAL
-       namespace: inje
+       namespace: inject
     - script:
         interpreter: SHELL
         scripts:
