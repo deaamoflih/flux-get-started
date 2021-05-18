@@ -24,22 +24,22 @@ building:
        file: VERSION.properties
        scope: RESULT
        namespace: inject
-    - script:
-       interpreter: SHELL
-       scripts:
-         - docker login -u deaamoflih -p ${bamboo.inject.PASS}
+#    - script:
+#       interpreter: SHELL
+#       scripts:
+#         - docker login -u deaamoflih -p ${bamboo.inject.PASS}
     - script: echo "task3" > deployment.yaml
  #   - maven:
  #      executable: "2"
  #      jdk: JDK 1.8
  #      goal: clean package -DskipTests=true
  #      environment: SS_SERNAME=ss ADA_ASASD=sdf
-    - script: 
-       scripts:
-        - docker build -t deaamoflih/sample:2.0 .
-    - script: 
-       scripts:
-        - docker push deaamoflih/sample:2.0     
+#    - script: 
+#       scripts:
+#        - docker build -t deaamoflih/sample:2.0 .
+#    - script: 
+#       scripts:
+#        - docker push deaamoflih/sample:2.0     
   artifacts:
     - name: Openshift deployment descriptor
       location: ./
