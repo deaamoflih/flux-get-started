@@ -17,10 +17,10 @@ DEV:
     - artifact-download:
         artifacts:
           - destination: ./
-    - inject-variables:
-       file: VERSION.properties
-       scope: LOCAL
-       namespace: inject
+   # - inject-variables:
+   #    file: VERSION.properties
+   #    scope: LOCAL
+   #    namespace: inject
     - script:
         interpreter: SHELL
         scripts:
