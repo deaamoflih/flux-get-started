@@ -48,7 +48,7 @@ building:
       required: true        
   requirements:
     - system.docker.executable
-    - system.builder.mvn3.Maven 3
+  #  - system.builder.mvn3.Maven 3
 branches:
   create: for-new-branch
   delete:
