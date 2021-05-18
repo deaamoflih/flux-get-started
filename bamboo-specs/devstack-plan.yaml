@@ -46,7 +46,12 @@ building:
       location: ./
       pattern: deployment.yaml
       shared: true
-      required: true        
+      required: true     
+    - name: VERSION properties
+      location: ./
+      pattern: VERSION.properties
+      shared: true
+      required: true  
   requirements:
     - system.docker.executable
   #  - system.builder.mvn3.Maven 3
