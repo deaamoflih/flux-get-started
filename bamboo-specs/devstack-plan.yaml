@@ -18,7 +18,7 @@ building:
     - script:
        scripts:
         - echo "test"
-        - echo PASS=${bamboo.pass} > VERSION.properties
+        - echo VERSION=77 > VERSION.properties
     - inject-variables:
 ##       task-description: task1
        file: VERSION.properties
