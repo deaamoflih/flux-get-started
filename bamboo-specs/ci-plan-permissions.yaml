@@ -1,6 +1,5 @@
 ---
 version: 2
-#server-name: CI Bamboo
 plan:
   key: DEV-PERDEV
 plan-permissions:
