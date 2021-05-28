@@ -1,8 +1,0 @@
-!include 'devstack-plan.yaml'
----
-!include 'devstack-permissions.yaml'
----
-!include 'deploy.yaml'
----
-!include 'deploy-p.yaml'
-
