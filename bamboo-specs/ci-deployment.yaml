@@ -35,8 +35,7 @@ DEV:
             rm 1.txt
   final-tasks: []
   variables:
-    api_server: dsf
-    secret_token: d
+    testing: dsf
   requirements:
   - deploy: 'true'
   notifications: []
