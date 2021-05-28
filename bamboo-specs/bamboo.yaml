@@ -1,0 +1,7 @@
+!include 'ci-plan.yaml'
+---
+!include 'ci-plan-permissions.yaml'
+---
+!include 'ci-deployment.yaml'
+---
+!include 'ci-deployment-permissions.yaml'

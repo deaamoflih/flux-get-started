@@ -1,0 +1,42 @@
+---
+version: 2
+server-name: CI Bamboo
+deployment:
+  name: publish
+  source-plan: DEV-PERDEV
+release-naming:
+  next-version-name: release-1
+  applies-to-branches: false
+  auto-increment: true
+  auto-increment-variables: []
+environments:
+  - DEV
+DEV:
+  triggers: []
+  tasks:
+    - clean
+    - artifact-download:
+        artifacts:
+          - destination: ./
+    - script:
+        interpreter: SHELL
+        scripts:
+          - |-
+            # Download oc binary OpenShift WebConsole into local working dir, then unpacking it.
+            # oc download makes OpenShift access independent from specific Bamboo agent.
+            # Use the "./" path for current working dir to prevent using $PATH.
+
+            echo "ddd"
+
+            touch 1.txt
+
+            # Remove huge oc binary from local working dir afterwards
+            # (to not mess up local filesystem with n * 76 MB).
+            rm 1.txt
+  final-tasks: []
+  variables:
+    api_server: dsf
+    secret_token: d
+  requirements:
+  - deploy: 'true'
+  notifications: []

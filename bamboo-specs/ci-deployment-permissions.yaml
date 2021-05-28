@@ -1,0 +1,19 @@
+---
+version: 2
+#server-name: CI Bamboo
+deployment:
+  name: publish
+deployment-permissions:
+  - users: []
+    groups: []
+    permissions:
+      - view
+      - edit
+environment-permissions:
+  - DEV:
+      - users: []
+        groups: []
+        permissions:
+          - view
+          - edit
+          - deploy

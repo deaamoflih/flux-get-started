@@ -1,0 +1,92 @@
+---
+version: 2
+plan:
+  project-key: DEV
+  key: PERDEV
+  name: Build
+stages:
+- Default Stage:
+    manual: false
+    final: false
+    jobs:
+    - Default Job
+Default Job:
+  key: JOB1
+  tasks:
+  - checkout:
+      force-clean-build: 'true'
+  - script:
+      interpreter: SHELL
+      scripts:
+      - echo "ss"
+      conditions:
+      - variable:
+          equals:
+            test_stage_build: 'true'
+  - script:
+      interpreter: SHELL
+      scripts:
+      - |-
+
+        ### using cen ###
+        echo "dasda"
+      conditions:
+      - variable:
+          equals:
+            planRepository.1.branchName: develop
+  - any-task:
+      plugin-key: org.jfrog.bamboo.bamboo-artifactory-plugin:artifactoryGradleTask
+      configuration: {}
+  - any-task:
+      plugin-key: org.jfrog.bamboo.bamboo-artifactory-plugin:artifactoryGradleTask
+      configuration: {}
+      conditions:
+      - variable:
+          equals:
+            planRepository.1.branchName: develop
+  - any-task:
+      plugin-key: ch.mibex.bamboo.sonar4bamboo:sonar4bamboo.sonarscannertask
+      configuration:
+        chosenSonarConfigId: '1'
+        sonarMainBranch: develop
+        buildJdk: Adopt Open JDK 11.0.9
+        useGlobalSonarServerConfig: 'true'
+        sonarPullRequestAnalysis: 'true'
+        incrementalNoPullRequest: incrementalModeFailBuildField
+        executable: Sonar Scanner
+        illegalBranchCharsReplacement: _
+        incrementalModeNotPossible: incrementalModeRunFullAnalysis
+        autoBranch: 'true'
+  - script:
+      interpreter: SHELL
+      scripts:
+       - |-
+         # Download helm binary into local working dir, then unpacking it
+         # helm download makes process independent from specific Bamboo agent
+         # Use the "./" path for current working dir to prevent using $PATH.
+         touch sadf.txt
+         rm sadf.txt
+         touch jj.txt
+          
+  requirements:
+   - system.docker.executable
+  artifacts:
+    - name: Helm environment files
+      location: './'
+      pattern: '*.txt'
+      shared: true
+      required: true
+
+variables:
+  docker_push_password: BAMsd
+  test_stage_build: 'false'
+branches:
+  create: for-new-branch
+  delete:
+    after-deleted-days: 1
+    after-inactive-days: 7
+  link-to-jira: true
+notifications: []
+labels: []
+other:
+  concurrent-build-plugin: system-default
