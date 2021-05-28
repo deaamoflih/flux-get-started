@@ -1,6 +1,6 @@
 ---
 version: 2
-server-name: CI Bamboo
+#server-name: CI Bamboo
 deployment:
   name: publish
   source-plan: DEV-PERDEV
