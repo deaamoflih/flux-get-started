@@ -78,8 +78,7 @@ Default Job:
       required: true
 
 variables:
-  docker_push_password: 'sad'
-  test_stage_build: 'falsafe'
+  test: 'falsafe'
 branches:
   create: for-new-branch
   delete:
