@@ -78,8 +78,8 @@ Default Job:
       required: true
 
 variables:
-  docker_push_password: BAMsd
-  test_stage_build: 'false'
+  docker_push_password: 'sad'
+  test_stage_build: 'falsafe'
 branches:
   create: for-new-branch
   delete:
